@@ -30,7 +30,7 @@ contract Exposure is
 
     event DropCreated(uint256 dropId);
 
-    IExposureSeeder public quantumSeeder;
+    IExposureSeeder public exposureSeeder;
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
@@ -51,7 +51,7 @@ contract Exposure is
     ) ERC721("Exposure", "EXP") {
         _setupRole(DEFAULT_ADMIN_ROLE, admin);
         _treasury = treasury;
-        quantumSeeder = IExposureSeeder(seeder);
+        exposureSeeder = IExposureSeeder(seeder);
     }
 
     function _baseURI() internal view override returns (string memory) {
@@ -98,7 +98,7 @@ contract Exposure is
     }
 
     function setSeeder(address seeder) public onlyRole(DEFAULT_ADMIN_ROLE) {
-        quantumSeeder = IExposureSeeder(seeder);
+        exposureSeeder = IExposureSeeder(seeder);
     }
 
     function createDrop(address artist, uint128 max)
@@ -163,7 +163,7 @@ contract Exposure is
     {
         uint256 virtualTokenId = tokenId - (tokenIdToDrop[tokenId] * SEPARATOR);
         uint256 dropId = tokenIdToDrop[tokenId];
-        uint256 seed = quantumSeeder.dropIdToSeed(dropId);
+        uint256 seed = exposureSeeder.dropIdToSeed(dropId);
         //shuffle metadata
         uint256 shuffledVTI = (virtualTokenId + seed) % _drops[dropId].max;
         if (bytes(dropToIPFS[dropId]).length > 0) {
