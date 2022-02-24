@@ -8,3 +8,7 @@ interface IExposure {
 
     function getArtist(uint256 dropId) external view returns (address);
 }
+
+interface IExposureBalance is IExposure {
+    function balanceOf(address user) external view returns (uint256);
+}

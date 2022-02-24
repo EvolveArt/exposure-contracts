@@ -13,11 +13,11 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract Exposure is
     ERC2981,
+    ERC721Enumerable,
     IExposure,
     OSContractURI,
     Ownable,
-    Manageable,
-    ERC721Enumerable
+    Manageable
 {
     using Strings for uint256;
     using BitMaps for BitMaps.BitMap;

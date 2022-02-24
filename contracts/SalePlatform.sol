@@ -38,7 +38,7 @@ contract SalePlatform is ContinuousDutchAuction, ReentrancyGuard {
     mapping(uint256 => MPClaim) public mpClaims;
     mapping(uint256 => Whitelist) public whitelists;
     uint256 public defaultArtistCut; //10000 * percentage
-    IExposure public exposure;
+    IExposureBalance public exposure;
     IExposureMintPass public mintpass;
 
     BitMaps.BitMap private _disablingLimiter;
@@ -53,7 +53,7 @@ contract SalePlatform is ContinuousDutchAuction, ReentrancyGuard {
         address admin,
         address payable treasury
     ) {
-        exposure = IExposure(deployedExposure);
+        exposure = IExposureBalance(deployedExposure);
         mintpass = IExposureMintPass(deployedMP);
         _setupRole(DEFAULT_ADMIN_ROLE, admin);
         _exposureTreasury = treasury;
