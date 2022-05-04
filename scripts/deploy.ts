@@ -22,8 +22,8 @@ async function main() {
 
   const Exposure = await ethers.getContractFactory("Exposure");
   const exposure = await Exposure.deploy(
-    "0xDD523AB1b6016eBe28DA8B68A9585173BB2aAc3F",
-    "0xDD523AB1b6016eBe28DA8B68A9585173BB2aAc3F",
+    "0xAeEfFA0865eCD9F2d44b507C78149F92Fa48f904",
+    "0xAeEfFA0865eCD9F2d44b507C78149F92Fa48f904",
     seeder.address
   );
 
@@ -31,6 +31,8 @@ async function main() {
 
   console.log("Exposure deployed to:", exposure.address);
 }
+// Seeder deployed to: 0x2D7FCA6e92eF68C2d0759aD2a7798bF0E3242F4C
+// Exposure deployed to: 0x136c84322fcb716Aa4454d6Cca0970DB69feaa6a
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.

@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/structs/BitMaps.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract Exposure is
+contract Rhapsody is
     ERC2981,
     ERC721Enumerable,
     IExposure,
@@ -48,7 +48,7 @@ contract Exposure is
         address admin,
         address treasury,
         address seeder
-    ) ERC721("Exposure", "EXP") {
+    ) ERC721("Rhapsody", "RSD") {
         _setupRole(DEFAULT_ADMIN_ROLE, admin);
         _treasury = treasury;
         exposureSeeder = IExposureSeeder(seeder);
