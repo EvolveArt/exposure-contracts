@@ -170,7 +170,8 @@ contract Exposure is
             return
                 string(
                     abi.encodePacked(
-                        "ipfs://",
+                        // removed to avoid future changes in the storage service 
+                        // "ipfs://",
                         dropToIPFS[dropId],
                         "/",
                         shuffledVTI.toString()
