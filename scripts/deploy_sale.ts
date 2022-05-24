@@ -17,7 +17,7 @@ async function main() {
 
   const MintPass = await ethers.getContractFactory("ExposureMintPass");
   const mintPass = await MintPass.deploy(
-    "ipfs://",
+    "ar://",
     "0xDD523AB1b6016eBe28DA8B68A9585173BB2aAc3F"
   );
   await mintPass.deployed();

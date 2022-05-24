@@ -2724,7 +2724,7 @@ contract Exposure is
             return
                 string(
                     abi.encodePacked(
-                        "ipfs://",
+                        "ar://",
                         dropToIPFS[dropId],
                         "/",
                         shuffledVTI.toString()
