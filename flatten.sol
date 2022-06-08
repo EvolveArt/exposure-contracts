@@ -2602,7 +2602,7 @@ contract Exposure is
         address admin,
         address treasury,
         address seeder
-    ) ERC721("Exposure", "EXP") {
+    ) ERC721("Rhapsody Curated", "RHAP") {
         _setupRole(DEFAULT_ADMIN_ROLE, admin);
         _treasury = treasury;
         exposureSeeder = IExposureSeeder(seeder);

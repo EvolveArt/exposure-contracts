@@ -42,8 +42,8 @@ contract ExposureMintPass is
     constructor(string memory baseURI, address payable treasury)
         ERC1155(baseURI)
     {
-        name = "Exposure MintPass";
-        symbol = "EPASS";
+        name = "Rhapsody MintPass";
+        symbol = "RPASS";
         _treasury = treasury;
     }
 
