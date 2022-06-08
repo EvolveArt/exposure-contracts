@@ -25,7 +25,7 @@ async function main() {
 
   const SalePlatorm = await ethers.getContractFactory("SalePlatform");
   const salePlatorm = await SalePlatorm.deploy(
-    "0x2E19da5a8C5445937ff0BA0D03984Cb756C774A3",
+    "0x72A912A5123630DA4de996e3176ECc9FD50a300b",
     mintPass.address,
     "0xDD523AB1b6016eBe28DA8B68A9585173BB2aAc3F",
     "0xDD523AB1b6016eBe28DA8B68A9585173BB2aAc3F"
@@ -35,7 +35,7 @@ async function main() {
 
   const exposure = await ethers.getContractAt(
     "Exposure",
-    "0x2E19da5a8C5445937ff0BA0D03984Cb756C774A3"
+    "0x72A912A5123630DA4de996e3176ECc9FD50a300b"
   );
 
   await exposure.setMinter(salePlatorm.address);
